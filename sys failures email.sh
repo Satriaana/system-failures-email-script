@@ -15,9 +15,16 @@ read -p 'Incident No:' incnovar
 
 read -p 'Is this the final update?' finalvar
 
-echo -e '\n\nDear Colleagues,' '\n\nMessage:' $msgvar '\nColleague Impact:' $cimpvar '\nRegions Impacted:' $rimpvar '\nCurrent Status:' $cstatvar '\nNext Update By:' $nupdtvar '\nIncident No:' $incnovar
+if [ "$finalvar" == "no" ];
+then
+    read -p 'final message: ' msg1var
 
-echo -e "\nPlease contact your local IT Helpdesk if you continue to experience issues."
+    echo -e '\n\nDear Colleagues,' '\n\nMessage:' $msgvar '\nColleague Impact:' $cimpvar '\nRegions Impacted:' $rimpvar '\nCurrent Status:' $cstatvar '\nNext Update By:' $nupdtvar '\nIncident No:' $incnovar '\n\nfinal message: ' $msg1var
+    echo -e "\nRegards,"
+    echo -e "\nTeam Satriaana"
 
-echo -e "\nRegards,"
-echo -e "\nTeam Satriaana"
+else
+    echo -e '\n\nDear Colleagues,' '\n\nMessage:' $msgvar '\nColleague Impact:' $cimpvar '\nRegions Impacted:' $rimpvar '\nCurrent Status:' $cstatvar '\nNext Update By:' $nupdtvar '\nIncident No:' $incnovar
+    echo -e "\nRegards,"
+    echo -e "\nTeam Satriaana"
+fi
